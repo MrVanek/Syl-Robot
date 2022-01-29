@@ -1,4 +1,4 @@
-from evdev import InputDevice, categorize, ecodes, KeyEvent
+from evdev import InputDevice, categorize, ecodes, KeyEvent, device
 
 class Controller ():
   def __init__(self):
@@ -12,8 +12,10 @@ class Controller ():
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
         gp_input = categorize(event)
-        if gp_input == ecodes.ABS_Y:
-          print(event.value)
+        axis = device.AbsInfo
+        print (axis)
+        #if gp_input == ecodes.ABS_Y:
+         # print(event.value)
 
         '''
         
