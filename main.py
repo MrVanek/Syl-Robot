@@ -1,6 +1,6 @@
 from robot import Robot
 #  This will be the repo to get the 6 wheeled robot working with Sylvie
-
+#192.168.0.146
 
 # Steps:  
 # 1. Get Motor Hat to move a motor
@@ -17,4 +17,5 @@ jj = Robot()
 
 
 # Main Program
-pass
+jj.forward()
+

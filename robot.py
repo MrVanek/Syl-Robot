@@ -1,4 +1,6 @@
 from time import sleep
+from adafruit_motorkit import MotorKit
+kit = MotorKit()
 
 class Robot():
 
@@ -6,10 +8,12 @@ class Robot():
     print("Initializing robot...")
 
   def forward(self, amount):
-    sleep(.5)
-    pass
+    kit.motor1.throttle = 0.5
+    sleep(2)
+    kit.motor1.throttle = 0.0
 
-  def backwards(self, amount):
+
+  def back(self, amount):
     pass
 
   def right(self, amount):
