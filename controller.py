@@ -11,10 +11,14 @@ class Controller ():
   def begin_controlling(self):
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
+        if event.type == ecodes.EV_KEY:
+          if event.code == ecodes.ABS_Y:
+            print ("I see input")
+
+        
         gp_input = categorize(event)
         
-        if gp_input == AbsEvent.ABS_Y :
-          print ("I see input")
+          
         #if gp_input == ecodes.ABS_Y:
          # print(event.value)
 
