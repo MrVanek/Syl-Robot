@@ -50,7 +50,7 @@ class Robot():
     kit.motor2.throttle = power
 
 
-  def full_stop():
+  def full_stop(self):
     kit.motor3.throttle = 0.0
     kit.motor4.throttle = 0.0
     kit.motor3.throttle = 0.0
