@@ -13,6 +13,7 @@ from controller import Controller
 
 # Setup
 gp = Controller()
+gp.using_gamepad = True
 jj = Robot()
 
 
