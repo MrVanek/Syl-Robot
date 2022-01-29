@@ -13,7 +13,7 @@ class Controller ():
       for event in self.gamepad.read_loop():
         if event.type == ecodes.EV_ABS:
           if event.code == ecodes.ABS_Y:
-            print ("I see input")
+            print (event.value)
 
         
         gp_input = categorize(event)
