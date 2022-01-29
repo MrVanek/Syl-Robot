@@ -12,7 +12,7 @@ class Controller ():
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
         gp_input = categorize(event)
-        if gp_input == "ABS_y" and abs(gp_input > .2):
+        if gp_input == ecodes.ABS_Y:
           print(event.value)
 
         '''
