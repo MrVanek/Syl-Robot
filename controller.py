@@ -2,9 +2,9 @@ from evdev import InputDevice, categorize, ecodes, KeyEvent
 
 class Controller ():
   def __init__(self):
-    gamepad = InputDevice('/dev/input/event1')
+    self.gamepad = InputDevice('/dev/input/event1')
     self.using_gamepad = True
-    print(gamepad)
+    print(self.gamepad)
     self.begin_controlling()
 
 
