@@ -13,7 +13,7 @@ class Controller ():
       for event in self.gamepad.read_loop():
         gp_input = categorize(event)
         axis = device.AbsInfo
-        print (axis)
+        print (axis.value)
         #if gp_input == ecodes.ABS_Y:
          # print(event.value)
 
