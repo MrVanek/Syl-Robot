@@ -8,6 +8,7 @@ class Robot():
     print("Initializing robot...")
 
   def forward(self, amount):
+    print("Trying to Move Motor")
     kit.motor1.throttle = 0.5
     sleep(2)
     kit.motor1.throttle = 0.0
