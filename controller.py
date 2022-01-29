@@ -11,11 +11,11 @@ class Controller ():
   def begin_controlling(self):
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
-        print(categorize(event))
+        #print(categorize(event))
         
         
-        #if event.type == 3 and event.code == 5:
-         # print(event.value)
+        if event.type == 3 and event.code == 5:
+          print(event.value)
 
         '''
         
