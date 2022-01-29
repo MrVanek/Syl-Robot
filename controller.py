@@ -11,11 +11,14 @@ class Controller ():
   def begin_controlling(self):
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
+        print(categorize(event))
+        
+        
         if event.type == 3 and event.code == 5:
           print(event.value)
 
         '''
-        print(categorize(event))
+        
         
         if event.type == ecodes.EV_KEY:
           keyevent = categorize(event)
