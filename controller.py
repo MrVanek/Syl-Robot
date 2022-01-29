@@ -11,10 +11,8 @@ class Controller ():
   def begin_controlling(self):
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
-        #print(categorize(event))
-        
-        
-        if event.type == 3 and event.code == 5:
+        gp_input = categorize(event)
+        if gp_input == "ABS_y" and abs(gp_input > .2):
           print(event.value)
 
         '''
