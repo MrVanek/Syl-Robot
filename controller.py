@@ -2,7 +2,7 @@ from evdev import InputDevice, categorize, ecodes, KeyEvent
 
 class Controller ():
   def __init__(self):
-    self.gamepad = InputDevice('/dev/input/event1')
+    self.gamepad = InputDevice('/dev/input/event0')
     self.using_gamepad = True
     print(self.gamepad)
     self.begin_controlling()
@@ -14,8 +14,8 @@ class Controller ():
         print(categorize(event))
         
         
-        if event.type == 3 and event.code == 5:
-          print(event.value)
+        #if event.type == 3 and event.code == 5:
+         # print(event.value)
 
         '''
         
