@@ -3,7 +3,7 @@ from robot import Robot
 #192.168.0.148
 
 # Steps:  
-# 1. Get Motor Hat to move a motor
+# 1. Get Motor Hat to move a motor  DONE
 # 2. Get all motors set up and driving forward and backwards based on code
 # 3. Turning
 # 4. Controller mechanism (Bluetooth game controller or usb?)
