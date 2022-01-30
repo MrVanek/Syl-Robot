@@ -9,6 +9,8 @@ class Robot():
 
   def __init__(self, using_gamepad = True):
     print("Initializing robot...")
+    self.MAX_AXIS_VALUES = 32768
+    self.DEADZONE = 0.15
     self.gamepad = InputDevice('/dev/input/event0')
     self.using_gamepad = using_gamepad
     print(self.gamepad)
@@ -67,8 +69,6 @@ class Robot():
 
 
   def begin_controlling(self):
-    MAX_AXIS_VALUES = 32768
-    DEADZONE = 0.15
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
 
@@ -78,8 +78,8 @@ class Robot():
           # TODO: normalize this value from -1 to 1
           # TODO: use it to drive the robot
           if event.code == ecodes.ABS_Y:
-            speed = map_input(event.value, MAX_AXIS_VALUES, -MAX_AXIS_VALUES, -1, 1)
-            speed = check_deadzone(speed, DEADZONE)
+            speed = map_input(event.value, self.MAX_AXIS_VALUES, -self.MAX_AXIS_VALUES, -1, 1)
+            speed = check_deadzone(speed, self.DEADZONE)
             print (speed)
 
 
