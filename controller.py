@@ -1,3 +1,6 @@
+### ROLLED INTO ROBOT class
+###  REMOVE AFTER TESTING
+
 from evdev import InputDevice, ecodes, categorize, KeyEvent
 from helper import map_input, check_deadzone
 
@@ -11,7 +14,7 @@ class Controller ():
 
   def begin_controlling(self):
     MAX_AXIS_VALUES = 32768
-    DEADZONE = 0.3
+    DEADZONE = 0.15
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
 

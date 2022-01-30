@@ -1,11 +1,20 @@
 from time import sleep
 from adafruit_motorkit import MotorKit
+from evdev import InputDevice, ecodes, categorize, KeyEvent
+from helper import map_input, check_deadzone
+
 kit = MotorKit()
 
 class Robot():
 
   def __init__(self):
     print("Initializing robot...")
+    self.gamepad = InputDevice('/dev/input/event0')
+    self.using_gamepad = True
+    print(self.gamepad)
+    if self.using_gamepad:
+      self.begin_controlling()
+    
     
 
   def forward(self, amount, speed = 0.5):
@@ -55,4 +64,33 @@ class Robot():
     kit.motor4.throttle = 0.0
     kit.motor3.throttle = 0.0
     kit.motor4.throttle = 0.0
+
+
+  def begin_controlling(self):
+    MAX_AXIS_VALUES = 32768
+    DEADZONE = 0.15
+    if self.using_gamepad:
+      for event in self.gamepad.read_loop():
+
+        #Check for axis events
+        if event.type == ecodes.EV_ABS:        
+          # Check for left stick Y
+          # TODO: normalize this value from -1 to 1
+          # TODO: use it to drive the robot
+          if event.code == ecodes.ABS_Y:
+            speed = map_input(event.value, MAX_AXIS_VALUES, -MAX_AXIS_VALUES, -1, 1)
+            speed = check_deadzone(speed, DEADZONE)
+            print (speed)
+
+
+        # This is a button example.  scancode probably incorrect.   
+        if event.type == ecodes.EV_KEY:
+          keyevent = categorize(event)
+          if keyevent.keystate == KeyEvent.key_down:
+            if keyevent.scancode == 305:
+                print('Back')
+        
+        
+        # TODO Get a key value to full stop and drop out of the program.
+      
 

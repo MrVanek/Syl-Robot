@@ -1,5 +1,5 @@
 from robot import Robot
-from controller import Controller
+#from controller import Controller
 #  This will be the repo to get the 6 wheeled robot working with Sylvie
 #192.168.0.148
 
@@ -12,9 +12,9 @@ from controller import Controller
 
 
 # Setup
-gp = Controller()
-gp.using_gamepad = True
+
 jj = Robot()
+jj.using_gamepad = True
 
 
 
