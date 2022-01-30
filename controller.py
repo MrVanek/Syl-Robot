@@ -1,5 +1,5 @@
 from evdev import InputDevice, ecodes, categorize, KeyEvent
-from helper import map_input
+from helper import map_input, check_deadzone
 
 class Controller ():
   def __init__(self):
@@ -11,6 +11,7 @@ class Controller ():
 
   def begin_controlling(self):
     MAX_AXIS_VALUES = 32768
+    DEADZONE = 0.3
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
 
@@ -21,6 +22,7 @@ class Controller ():
           # TODO: use it to drive the robot
           if event.code == ecodes.ABS_Y:
             speed = map_input(event.value, MAX_AXIS_VALUES, -MAX_AXIS_VALUES, -1, 1)
+            speed = check_deadzone(speed, DEADZONE)
             print (speed)
 
 
