@@ -7,10 +7,10 @@ kit = MotorKit()
 
 class Robot():
 
-  def __init__(self):
+  def __init__(self, using_gamepad = True):
     print("Initializing robot...")
     self.gamepad = InputDevice('/dev/input/event0')
-    self.using_gamepad = True
+    self.using_gamepad = using_gamepad
     print(self.gamepad)
     if self.using_gamepad:
       self.begin_controlling()

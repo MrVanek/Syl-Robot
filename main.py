@@ -13,8 +13,7 @@ from robot import Robot
 
 # Setup
 
-jj = Robot()
-jj.using_gamepad = False
+jj = Robot(using_gamepad = False)
 
 
 
