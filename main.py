@@ -7,13 +7,13 @@ from robot import Robot
 # 1. Get Motor Hat to move a motor  DONE
 # 2. Get all motors set up and driving forward and backwards based on code
 # 3. Turning
-# 4. Controller mechanism (Bluetooth game controller or usb?)
+# 4. Controller mechanism (Bluetooth game controller or usb?) STARTED
 
 
 
 # Setup
 
-jj = Robot(using_gamepad = False)
+jj = Robot(using_gamepad = True)
 
 
 
