@@ -1,4 +1,5 @@
 from evdev import InputDevice, ecodes, categorize, KeyEvent
+from helper import map_input
 
 class Controller ():
   def __init__(self):
@@ -9,6 +10,7 @@ class Controller ():
 
 
   def begin_controlling(self):
+    MAX_AXIS_VALUES = 32768
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
 
@@ -18,7 +20,8 @@ class Controller ():
           # TODO: normalize this value from -1 to 1
           # TODO: use it to drive the robot
           if event.code == ecodes.ABS_Y:
-            print (event.value)
+            speed = map_input(event.value, -MAX_AXIS_VALUES, MAX_AXIS_VALUES, -1, 1)
+            print (speed)
 
 
         # This is a button example.  scancode probably incorrect.   
