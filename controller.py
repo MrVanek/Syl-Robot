@@ -20,7 +20,7 @@ class Controller ():
           # TODO: normalize this value from -1 to 1
           # TODO: use it to drive the robot
           if event.code == ecodes.ABS_Y:
-            speed = map_input(event.value, -MAX_AXIS_VALUES, MAX_AXIS_VALUES, -1, 1)
+            speed = map_input(event.value, MAX_AXIS_VALUES, -MAX_AXIS_VALUES, -1, 1)
             print (speed)
 
 
