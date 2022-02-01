@@ -71,11 +71,8 @@ class Robot():
     if self.using_gamepad:
       for event in self.gamepad.read_loop():
 
-        #Check for axis events
+        #Check for LEFT STICK axis events
         if event.type == ecodes.EV_ABS:        
-          # Check for left stick Y
-          # TODO: normalize this value from -1 to 1
-          # TODO: use it to drive the robot
           forward_speed = 0.0
           turn_speed = 0.0
           if event.code == ecodes.ABS_Y:
@@ -88,6 +85,7 @@ class Robot():
             turn_speed = check_deadzone(speed, self.DEADZONE)
             print (turn_speed)
 
+          # TODO: use inputs to drive robot
           self.movement_logic(forward_speed, turn_speed)
 
 
@@ -96,7 +94,7 @@ class Robot():
           keyevent = categorize(event)
           if keyevent.keystate == KeyEvent.key_down:
             if keyevent.scancode == 305:
-                print('Back')
+                print('Circle')
         
         
         # TODO Get a key value to full stop and drop out of the program.
