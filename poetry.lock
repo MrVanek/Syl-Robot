@@ -1,0 +1,171 @@
+[[package]]
+name = "adafruit-blinka"
+version = "6.20.1"
+description = "CircuitPython APIs for non-CircuitPython versions of Python such as CPython on Linux and MicroPython."
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[package.dependencies]
+Adafruit-PlatformDetect = ">=3.13.0"
+Adafruit-PureIO = ">=1.1.7"
+pyftdi = ">=0.40.0"
+
+[[package]]
+name = "adafruit-circuitpython-busdevice"
+version = "5.1.1"
+description = "CircuitPython bus device classes to manage bus sharing."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Adafruit-Blinka = "*"
+
+[[package]]
+name = "adafruit-circuitpython-motor"
+version = "3.3.4"
+description = "CircuitPython helper library provides higher level objects to control motors and servos."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Adafruit-Blinka = "*"
+
+[[package]]
+name = "adafruit-circuitpython-motorkit"
+version = "1.6.3"
+description = "CircuitPython helper library for DC & Stepper Motor FeatherWing, Shield, and Pi Hat kits."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Adafruit-Blinka = "*"
+adafruit-circuitpython-busdevice = "*"
+adafruit-circuitpython-motor = "*"
+adafruit-circuitpython-pca9685 = "*"
+adafruit-circuitpython-register = "*"
+
+[[package]]
+name = "adafruit-circuitpython-pca9685"
+version = "3.4.0"
+description = "CircuitPython driver for motor, stepper, and servo based on PCA9685."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Adafruit-Blinka = "*"
+adafruit-circuitpython-busdevice = "*"
+adafruit-circuitpython-register = "*"
+
+[[package]]
+name = "adafruit-circuitpython-register"
+version = "1.9.7"
+description = "CircuitPython data descriptor classes to represent hardware registers on I2C and SPI devices."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "adafruit-platformdetect"
+version = "3.19.4"
+description = "Platform detection for use by libraries like Adafruit-Blinka."
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[[package]]
+name = "adafruit-pureio"
+version = "1.1.9"
+description = "Pure python (i.e. no native extensions) access to Linux IO    including I2C and SPI. Drop in replacement for smbus and spidev modules."
+category = "main"
+optional = false
+python-versions = ">=3.5.0"
+
+[[package]]
+name = "evdev"
+version = "1.4.0"
+description = "Bindings to the Linux input handling subsystem"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "pyftdi"
+version = "0.53.3"
+description = "FTDI device driver (pure Python)"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pyserial = ">=3.0"
+pyusb = ">=1.0.0,<1.2.0 || >1.2.0"
+
+[[package]]
+name = "pyserial"
+version = "3.5"
+description = "Python Serial Port Extension"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+cp2110 = ["hidapi"]
+
+[[package]]
+name = "pyusb"
+version = "1.2.1"
+description = "Python USB access module"
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "345f8ed2bbb3955505226c21c703394ed6f6cdd6d834a9fab6e7e3fcfc1b942e"
+
+[metadata.files]
+adafruit-blinka = [
+    {file = "Adafruit-Blinka-6.20.1.tar.gz", hash = "sha256:083f59e6de8fb8d2ceb0f4e056180c8f41f41cf59736d6abb7d7ec92281b8263"},
+]
+adafruit-circuitpython-busdevice = [
+    {file = "adafruit-circuitpython-busdevice-5.1.1.tar.gz", hash = "sha256:27049b07a3d6cdc6646bfe950ab1465604d898454b0fd9d893fd2c5294551506"},
+]
+adafruit-circuitpython-motor = [
+    {file = "adafruit-circuitpython-motor-3.3.4.tar.gz", hash = "sha256:11702cdf0025314bdb64daf580e5e49f4903460a504f66681f8a5e0beee5b324"},
+]
+adafruit-circuitpython-motorkit = [
+    {file = "adafruit-circuitpython-motorkit-1.6.3.tar.gz", hash = "sha256:0aa6c06234ba43375d882e7af3b980b4766b634e15adebd06e5280215d00dbe8"},
+]
+adafruit-circuitpython-pca9685 = [
+    {file = "adafruit-circuitpython-pca9685-3.4.0.tar.gz", hash = "sha256:8a6499ed7af7c315265d166651d1553ae4ce83eb2ed78ba22f6d0daa34f2b225"},
+]
+adafruit-circuitpython-register = [
+    {file = "adafruit-circuitpython-register-1.9.7.tar.gz", hash = "sha256:ee82a0aa94cf9dc12bc3c24b892323372d3b2e1b8b8e1cbc2498bcdea0e7dc71"},
+]
+adafruit-platformdetect = [
+    {file = "Adafruit-PlatformDetect-3.19.4.tar.gz", hash = "sha256:6ffb809ab15d02d997523696d37f2629e660587092204cc266f0b2ffd677821c"},
+]
+adafruit-pureio = [
+    {file = "Adafruit_PureIO-1.1.9.tar.gz", hash = "sha256:2caf22fb07c7f771d83267f331a76cde314723f884a9570ea6f768730c87a879"},
+]
+evdev = [
+    {file = "evdev-1.4.0.tar.gz", hash = "sha256:8782740eb1a86b187334c07feb5127d3faa0b236e113206dfe3ae8f77fb1aaf1"},
+]
+pyftdi = [
+    {file = "pyftdi-0.53.3-py3-none-any.whl", hash = "sha256:6e86880ec6d66389de643ca83de5d59fffea3bd334f492e12fab71a832f878a2"},
+    {file = "pyftdi-0.53.3.tar.gz", hash = "sha256:4ef20c246bdb0f278d283337d7a6e69cf9bdb0ead525e7ad867d9e46ad26e613"},
+]
+pyserial = [
+    {file = "pyserial-3.5-py2.py3-none-any.whl", hash = "sha256:c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0"},
+    {file = "pyserial-3.5.tar.gz", hash = "sha256:3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb"},
+]
+pyusb = [
+    {file = "pyusb-1.2.1-py3-none-any.whl", hash = "sha256:2b4c7cb86dbadf044dfb9d3a4ff69fd217013dbe78a792177a3feb172449ea36"},
+    {file = "pyusb-1.2.1.tar.gz", hash = "sha256:a4cc7404a203144754164b8b40994e2849fde1cfff06b08492f12fff9d9de7b9"},
+]

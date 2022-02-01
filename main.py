@@ -1,4 +1,5 @@
 from robot import Robot
+from time import sleep
 #from controller import Controller
 #  This will be the repo to get the 6 wheeled robot working with Sylvie
 #192.168.0.148
@@ -13,11 +14,17 @@ from robot import Robot
 
 # Setup
 
+# if using_gamepad = FALSE, Main Program will run
+# if using_gamepad = TRUE, You can control the robot via usb controller
 jj = Robot(using_gamepad = True)
-
-
 
 
 # Main Program
 jj.forward(2)
+sleep(1)
+jj.back(2)
+sleep(1)
+jj.right(2)
+sleep(1)
+jj.left(2)
 

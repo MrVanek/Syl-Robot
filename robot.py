@@ -17,7 +17,6 @@ class Robot():
     if self.using_gamepad:
       self.begin_controlling()
     
-    
 
   def forward(self, amount, speed = 0.5):
     print("Moving Forward")
@@ -77,10 +76,19 @@ class Robot():
           # Check for left stick Y
           # TODO: normalize this value from -1 to 1
           # TODO: use it to drive the robot
+          forward_speed = 0.0
+          turn_speed = 0.0
           if event.code == ecodes.ABS_Y:
             speed = map_input(event.value, self.MAX_AXIS_VALUES, -self.MAX_AXIS_VALUES, -1, 1)
-            speed = check_deadzone(speed, self.DEADZONE)
-            print (speed)
+            forward_speed = check_deadzone(speed, self.DEADZONE)
+            #print (forward_speed)
+
+          if event.code == ecodes.ABS_X:
+            speed = map_input(event.value, self.MAX_AXIS_VALUES, -self.MAX_AXIS_VALUES, -1, 1)
+            turn_speed = check_deadzone(speed, self.DEADZONE)
+            print (turn_speed)
+
+          self.movement_logic(forward_speed, turn_speed)
 
 
         # This is a button example.  scancode probably incorrect.   
@@ -93,4 +101,6 @@ class Robot():
         
         # TODO Get a key value to full stop and drop out of the program.
       
+  def movement_logic(self, forward_speed, turn_speed):
+    pass
 
