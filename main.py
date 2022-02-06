@@ -1,5 +1,6 @@
 from robot import Robot
 from time import sleep
+from gyro import GyroSensor
 #from controller import Controller
 #  This will be the repo to get the 6 wheeled robot working with Sylvie
 #192.168.0.148
@@ -16,6 +17,11 @@ from time import sleep
 
 # if using_gamepad = FALSE, Main Program will run
 # if using_gamepad = TRUE, You can control the robot via usb controller
+gyro = GyroSensor()
+
+while True:
+  gyro.get_angle()
+
 jj = Robot(using_gamepad = True)
 
 
