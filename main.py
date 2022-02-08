@@ -20,7 +20,7 @@ from gyro import GyroSensor
 gyro = GyroSensor()
 
 while True:
-  gyro.get_angle()
+  gyro.get_angle('y')
   sleep(0.5)
 '''
 jj = Robot(using_gamepad = True)

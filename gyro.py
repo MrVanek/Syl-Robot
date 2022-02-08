@@ -17,7 +17,7 @@ class GyroSensor():
 
     angle = self.mpu.gyro[options[axis]]
     if printing:
-      print(angle)
+      print("Gyro X:%.2f, Y: %.2f, Z: %.2f rad/s" % (self.mpu.gyro))
     return angle
 
 
