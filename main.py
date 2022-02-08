@@ -21,6 +21,7 @@ gyro = GyroSensor()
 
 while True:
   gyro.get_angle()
+  sleep(0.5)
 '''
 jj = Robot(using_gamepad = True)
 
