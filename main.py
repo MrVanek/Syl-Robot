@@ -1,4 +1,4 @@
-from robot import Robot
+#from robot import Robot
 from time import sleep
 from gyro import GyroSensor
 #from controller import Controller
@@ -21,7 +21,7 @@ gyro = GyroSensor()
 
 while True:
   gyro.get_angle()
-
+'''
 jj = Robot(using_gamepad = True)
 
 
@@ -34,3 +34,4 @@ jj.right(2)
 sleep(1)
 jj.left(2)
 
+'''

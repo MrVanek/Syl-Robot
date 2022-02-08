@@ -7,7 +7,7 @@ import adafruit_mpu6050
 class GyroSensor():
   def __init__(self):
     self.i2c = board.I2C()
-    self.mpu = adafruit_mpu6050.MPU6050(self.i2c, address = 8x60)
+    self.mpu = adafruit_mpu6050.MPU6050(self.i2c)
 
 
   def get_angle(self, axis = 'x', printing = True):
