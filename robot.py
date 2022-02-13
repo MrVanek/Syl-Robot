@@ -20,36 +20,40 @@ class Robot():
       self.begin_controlling()
     
 
-  def forward(self, amount, speed = 0.5):
+  def forward(self, amount = 1, speed = 0.5):
     print("Moving Forward")
     self.move_left_side(speed)
     self.move_right_side(speed)
-    sleep(amount)
-    self.full_stop()    
+    if not self.using_gamepad:
+      sleep(amount)
+      self.full_stop()    
 
 
-  def back(self, amount, speed = 0.5):
+  def back(self, amount = 1, speed = 0.5):
     print("Moving Backwards")
     self.move_left_side(-speed)
     self.move_right_side(-speed)
-    sleep(amount)
-    self.full_stop()    
+    if not self.using_gamepad:
+      sleep(amount)
+      self.full_stop()    
 
 
-  def right(self, amount, speed = 0.75):
+  def right(self, amount = 1, speed = 0.75):
     print("Turning Right")
     self.move_left_side(speed)
     self.move_right_side(-speed)
-    sleep(amount)
-    self.full_stop()    
+    if not self.using_gamepad:
+      sleep(amount)
+      self.full_stop()    
 
 
-  def left(self, amount, speed = 0.75):
+  def left(self, amount = 1, speed = 0.75):
     print("Turning Left")
     self.move_left_side(-speed)
     self.move_right_side(speed)
-    sleep(amount)
-    self.full_stop()    
+    if not self.using_gamepad:
+      sleep(amount)
+      self.full_stop()    
 
 
   def move_left_side(self, power = 0.5):
@@ -102,5 +106,27 @@ class Robot():
         # TODO Get a key value to full stop and drop out of the program.
       
   def movement_logic(self, forward_speed, turn_speed):
-    pass
+    
+    # No input
+    if (forward_speed == 0.0 and turn_speed == 0.0):
+      self.full_stop()
+    
+    # Turn only
+    elif(forward_speed == 0.0):
+      if (turn_speed > 0.0):
+        self.right(speed = turn_speed)
+      else:
+        self.left(speed = turn_speed)
+    
+    # Straight only
+    elif(turn_speed == 0.0):
+      if (forward_speed > 0.0):
+        self.forward(speed = forward_speed)
+      else:
+        self.back(speed = forward_speed)
+
+    # Angled Drive
+    else:
+      pass
+      #power sides independantly
 
