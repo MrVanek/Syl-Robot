@@ -36,7 +36,7 @@ class Robot():
     self.full_stop()    
 
 
-  def right(self, amount, speed = 0.5):
+  def right(self, amount, speed = 0.75):
     print("Turning Right")
     self.move_left_side(speed)
     self.move_right_side(-speed)
@@ -44,7 +44,7 @@ class Robot():
     self.full_stop()    
 
 
-  def left(self, amount, speed = 0.5):
+  def left(self, amount, speed = 0.75):
     print("Turning Left")
     self.move_left_side(-speed)
     self.move_right_side(speed)
