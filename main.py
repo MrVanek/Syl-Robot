@@ -29,8 +29,8 @@ jj = Robot(using_gamepad = False)
 
 
 # Main Program
-jj.forward(1,0.25)
-jj.back(1, 0.25)
+jj.forward(1)
+jj.back(1)
 
 #jj.right(2)
 #sleep(1)
