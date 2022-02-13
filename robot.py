@@ -53,13 +53,13 @@ class Robot():
 
 
   def move_left_side(self, power = 0.5):
-    kit.motor3.throttle = -power
-    kit.motor4.throttle = -power
+    kit.motor3.throttle = power
+    kit.motor4.throttle = power
 
 
   def move_right_side(self, power = 0.5):
-    kit.motor1.throttle = power
-    kit.motor2.throttle = power
+    kit.motor1.throttle = -power
+    kit.motor2.throttle = -power
 
 
   def full_stop(self):
