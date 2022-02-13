@@ -25,7 +25,7 @@ while True:
   print(angle)
   sleep(0.5)
 '''
-jj = Robot(using_gamepad = False)
+jj = Robot(using_gamepad = True)
 
 
 # Main Program
