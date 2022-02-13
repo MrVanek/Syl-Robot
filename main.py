@@ -30,10 +30,7 @@ jj = Robot(using_gamepad = False)
 
 # Main Program
 jj.forward(1)
-sleep(1)
 jj.back(1)
-sleep(1)
-
 
 #jj.right(2)
 #sleep(1)

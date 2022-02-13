@@ -14,6 +14,7 @@ class Robot():
     self.DEADZONE = 0.15
     self.gamepad = InputDevice('/dev/input/event0')
     self.using_gamepad = using_gamepad
+    self.full_stop()
     print(self.gamepad)
     if self.using_gamepad:
       self.begin_controlling()
@@ -62,8 +63,8 @@ class Robot():
 
 
   def full_stop(self):
-    kit.motor3.throttle = 0.0
-    kit.motor4.throttle = 0.0
+    kit.motor1.throttle = 0.0
+    kit.motor2.throttle = 0.0
     kit.motor3.throttle = 0.0
     kit.motor4.throttle = 0.0
 
