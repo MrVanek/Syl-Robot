@@ -1,6 +1,6 @@
-#from robot import Robot
+from robot import Robot
 from time import sleep
-from kalman import KalmanAngle
+#from kalman import KalmanAngle
 #from controller import Controller
 #  This will be the repo to get the 6 wheeled robot working with Sylvie
 #192.168.0.148
@@ -17,6 +17,7 @@ from kalman import KalmanAngle
 
 # if using_gamepad = FALSE, Main Program will run
 # if using_gamepad = TRUE, You can control the robot via usb controller
+'''
 gyro = KalmanAngle()
 
 while True:
@@ -24,16 +25,16 @@ while True:
   print(angle)
   sleep(0.5)
 '''
-jj = Robot(using_gamepad = True)
+jj = Robot(using_gamepad = False)
 
 
 # Main Program
-jj.forward(2)
+jj.forward(1)
 sleep(1)
-jj.back(2)
+jj.back(1)
 sleep(1)
-jj.right(2)
-sleep(1)
-jj.left(2)
 
-'''
+
+#jj.right(2)
+#sleep(1)
+#jj.left(2)
